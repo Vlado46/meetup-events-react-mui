@@ -84,13 +84,13 @@ const LoginForm = () => {
           variant="outlined"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Button variant="contained" fullWidth onClick={createNewUser}>
+        <Button variant="outlined" fullWidth onClick={createNewUser}>
           Create New User
         </Button>
-        <Button variant="contained" fullWidth onClick={signIn}>
+        <Button variant="outlined" fullWidth onClick={signIn}>
           Log In With Email
         </Button>
-        <Button variant="contained" fullWidth onClick={signInWithGoogle}>
+        <Button variant="outlined" fullWidth onClick={signInWithGoogle}>
           Sign In With Google
         </Button>
       </Stack>
