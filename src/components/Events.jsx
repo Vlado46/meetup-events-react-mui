@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import EventCard from "./EventCard";
 import { Box, Button, Stack } from "@mui/material";
 import { db } from "../config/firebase";
 import { getDocs, collection } from "firebase/firestore";
+import UserCtx from "../context/UserCtx";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
+
+  const { isLoggedIn } = useContext(UserCtx);
 
   const eventsCollection = collection(db, "events");
 
@@ -29,7 +32,7 @@ const Events = () => {
   return (
     <Stack>
       <Link className="link" to="/events/new">
-        <Button variant="contained">Add New Event</Button>
+        {isLoggedIn && <Button variant="contained">Add New Event</Button>}
       </Link>
       {events
         ?.sort((first, second) => second?.createdAt - first?.createdAt)
