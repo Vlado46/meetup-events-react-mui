@@ -1,0 +1,43 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-color: rgb(211, 211, 211);
+  text-align: center;
+}
+
+.one-time {
+  width: 100%;
+  height: 85vh;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 66vh;
+  overflow: hidden;
+  display: block;
+}
+
+.card-img {
+  width: 100%;
+  max-width: 360px;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .carousel-img {
+    width: 250px !important;
+    height: 20vh !important;
+    object-fit: cover !important;
+    overflow: hidden !important;
+  }
+}
